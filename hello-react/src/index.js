@@ -9,4 +9,6 @@ ReactDOM.render(<App />, document.getElementById('root'));
 //이 함수의 첫 번째 파라미터에는 페이지에 렌더링할 내용을 JSX형태로 작성하고, 두 번째 파라미터에는 해당 JSX를 헨더링할 document 내부 요소를 설정함.
 //여기서는 id가 root인 요소 안에 렌더링을 하도록 설정하였음. 이 요소는 public/index.html 파일을 열어보면 있음.
 
+
+
 serviceWorker.unregister();
