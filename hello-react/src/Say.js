@@ -19,7 +19,7 @@ const Say = () => {
         초록색
       </button>
       <button style={{ color: 'blue' }} onClick={() => setColor('blue')}>
-        파란색
+        파란색  
       </button>
     </div>
   );

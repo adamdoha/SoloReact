@@ -21,10 +21,21 @@
 // /* 컴포넌트에 여러요소가 있다면 반드시 부모요소 하나로 감싸야 합니다.
 //  Virtual DOM에서 컴포넌트 변화를 감지해 낼 때 효율적으로 비교할 수 있도록 컴포넌트 내부는 하나의 DOM 트리 구조로 이루어져야 한다는 규칙이 있음.*/
 
-import React from 'react';
-import EventPractice from './EventPractice';
-const App = () => {
-  return <EventPractice />;
-};
+class App extends React.Component{
+  render(){
+    return(
+      <div className="game">
+        <div className="game-board">
+          <Board/>
+        </div>
+        <div classNAme="game-info">
+         <div>{/*status*/}</div>
+        <ol>{/*todo*/}</ol>
+
+        </div>
+      </div>
+    )
+  }
+}
 
 export default App;

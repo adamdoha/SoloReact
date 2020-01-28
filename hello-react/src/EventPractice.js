@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 
+<<<<<<< HEAD
 const EventPractice = () => {
   const [form, setForm] = useState({
     username: '',

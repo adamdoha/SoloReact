@@ -1,0 +1,8 @@
+{
+  "name": "SoloReact",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/adamdoha/SoloReact.git",
+  "author": "Dolphago <adamdoha@users.noreply.github.com>",
+  "license": "MIT"
+}

@@ -12,4 +12,6 @@ function tick() {
 //여기서는 id가 root인 요소 안에 렌더링을 하도록 설정하였음. 이 요소는 public/index.html 파일을 열어보면 있음.
 setInterval(tick, 1000);
 
+
+
 serviceWorker.unregister();
