@@ -20,21 +20,42 @@
 // //이런 형식으로 작성한 코드는 브라우저에서 실행되기 전에 코드가 번들링되는 과정에서 바벨을 사용하여 일반 자바스크립트 형태의 코드로 변환됩니다.
 // /* 컴포넌트에 여러요소가 있다면 반드시 부모요소 하나로 감싸야 합니다.
 //  Virtual DOM에서 컴포넌트 변화를 감지해 낼 때 효율적으로 비교할 수 있도록 컴포넌트 내부는 하나의 DOM 트리 구조로 이루어져야 한다는 규칙이 있음.*/
+// {
+/* <div>
+<ScrollBox ref={ref => (this.scrollBox = ref)} />
+<button onClick={() => this.scrollBox.scrollToBottom()}>
+  맨 밑으로
+</button>
+</div> */
+// }
+import React, { Component } from 'react';
+import LifeCycleSample from './LifeCycleSample';
+import ErrorBoundary from './ErrorBoundary';
 
-class App extends React.Component{
-  render(){
-    return(
-      <div className="game">
-        <div className="game-board">
-          <Board/>
-        </div>
-        <div classNAme="game-info">
-         <div>{/*status*/}</div>
-        <ol>{/*todo*/}</ol>
+function getRandomColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
 
-        </div>
+class App extends React.Component {
+  state = {
+    color: '#000000'
+  };
+
+  handleClick = () => {
+    this.setState({
+      color: getRandomColor()
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>랜덤 색상</button>
+        <ErrorBoundary>
+          <LifeCycleSample color={this.state.color} />
+        </ErrorBoundary>
       </div>
-    )
+    );
   }
 }
 
