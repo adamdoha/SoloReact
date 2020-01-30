@@ -466,7 +466,7 @@ module.exports = function(webpackEnv) {
                 loader: require.resolve("sass-loader"),
                 options: {
                   prependData: `@import 'utils';`,
-                  ssasOptions: {
+                  sassOptions: {
                     includePaths: [paths.appSrc + "/styles"],
                     sourceMap: isEnvProduction && shouldUseSourceMap
                   }
