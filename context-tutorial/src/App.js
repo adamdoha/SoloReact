@@ -1,17 +1,17 @@
 import React from "react";
-import ColorBox from "./components/ColorBox";
-import { ColorProvider } from "./contexts/color";
-import SelectColors from "./components/SelectColors";
+import LeftPane from "./components/LeftPane";
+import RightPane from "./components/RightPane";
+import { SampleProvider } from "./contexts/sample";
 
-function App() {
+const App = () => {
   return (
-    <ColorProvider>
-      <div>
-        <SelectColors />
-        <ColorBox />
+    <SampleProvider>
+      <div className="panes">
+        <LeftPane />
+        <RightPane />
       </div>
-    </ColorProvider>
+    </SampleProvider>
   );
-}
+};
 
 export default App;
