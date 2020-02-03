@@ -42,7 +42,12 @@
   }
 
   //엘리먼트 사이사이에 테두리를 넣어줌
+}
+.TodoListItem-virtualized {
   & + & {
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid #dbf567;
+  }
+  &:nth-child(even) {
+    background: #ababac;
   }
 }
