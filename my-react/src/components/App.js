@@ -18,7 +18,7 @@ export default () => {
       <p className="description">Filter & Blur</p>
       <div className="App">
         <div className="left-panel">
-          Brigthess
+          밝기
           <input
             id="slider"
             type="range"

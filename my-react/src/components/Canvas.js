@@ -6,7 +6,7 @@ import Regions from './Regions';
 import BaseImage from './BaseImage';
 
 import useStore from '../store';
-
+import ImageFilter from 'react-image-filter';
 let id = 1;
 
 function getRelativePointerPosition(node) {
@@ -76,7 +76,7 @@ export default () => {
     width: s.width,
     height: s.height,
   }));
-  const setSize = useStore((s) => s.setSize);
+  const setSize = useStore((state) => state.setSize);
   const scale = useStore((state) => state.scale);
   const isDrawing = useStore((state) => state.isDrawing);
   const toggleDrawing = useStore((state) => state.toggleIsDrawing);

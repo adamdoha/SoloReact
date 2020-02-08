@@ -107,15 +107,7 @@ const App = class extends React.Component {
         <div className="Controls">{this.renderSliders()}</div>
 
         <div>
-          <h4>Presets</h4>
-          <button
-            className="btn btn-sm"
-            onClick={() =>
-              this.setState({ filter: NONE, values: NONE, applyFilter: true })
-            }
-          >
-            None
-          </button>
+          <h4>필터</h4>
           <button
             className="btn btn-sm"
             onClick={() =>
@@ -193,7 +185,7 @@ const App = class extends React.Component {
           </button>
         </div>
 
-        <h4>Misc</h4>
+        <h4>기능</h4>
 
         <button className="btn btn-sm" onClick={this.handleToggleFilter}>
           Turn filter {applyFilter ? "off" : "on"}
