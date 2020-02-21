@@ -8,6 +8,10 @@ import useStore from '../store';
 export default () => {
   const { setBrightness } = useStore();
 
+  const DoFilter = () => {
+    console.log('필터적용한다잇');
+  };
+
   return (
     <React.Fragment>
       <h2>Doha's Role</h2>
@@ -28,7 +32,7 @@ export default () => {
           />
           <RegionsList />
           <br />
-          <button>필터 적용</button>
+          <button onClick={DoFilter}>필터 적용</button>
         </div>
         <div className="right-panel">
           <Canvas />
