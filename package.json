@@ -4,5 +4,11 @@
   "main": "index.js",
   "repository": "https://github.com/adamdoha/SoloReact.git",
   "author": "Dolphago <adamdoha@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "brew": "0.0.8",
+    "flow": "^0.2.3",
+    "node": "^13.13.0",
+    "watchman": "^1.0.0"
+  }
 }
