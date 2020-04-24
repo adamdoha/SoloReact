@@ -5,16 +5,17 @@ const ColorContext = createContext({
   state: { color: "black", subcolor: "red" },
   actions: {
     setColor: () => {},
-    setSubcolor: () => {}
-  }
+    setSubcolor: () => {},
+  },
 });
 
 const ColorProvider = ({ children }) => {
   const [color, setColor] = useState("black");
   const [subcolor, setSubcolor] = useState("red");
+
   const value = {
     state: { color, subcolor },
-    actions: { setColor, setSubcolor }
+    actions: { setColor, setSubcolor },
   };
   return (
     <ColorContext.Provider value={value}>{children}</ColorContext.Provider>

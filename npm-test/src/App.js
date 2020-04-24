@@ -3,6 +3,50 @@ import "./index.scss";
 import ImageFilter from "./components/ImageFilter";
 
 const NONE = [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0];
+const nightfall = [
+  1,
+  0.23,
+  0.1,
+  -0.04,
+  0,
+  0.12,
+  1,
+  -0.32,
+  0,
+  0.25,
+  0,
+  0.12,
+  1,
+  0,
+  0.1,
+  0,
+  0,
+  0,
+  1,
+  0.36,
+];
+const Scared = [
+  1,
+  -0.42,
+  0,
+  0,
+  0,
+  0,
+  0.5,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+];
 
 const App = class extends React.Component {
   constructor() {
@@ -42,7 +86,7 @@ const App = class extends React.Component {
       colorTwo: null,
       key: new Date().getTime(),
     };
-
+    this.init = this.init.bind(this);
     this.handleToggleFilter = this.handleToggleFilter.bind(this);
   }
 
@@ -66,6 +110,17 @@ const App = class extends React.Component {
     });
   }
 
+  init() {
+    this.setState({
+      values: NONE,
+      filter: NONE,
+      applyFilter: true,
+      colorOne: null,
+      colorTwo: null,
+      key: new Date().getTime(),
+    });
+  }
+
   renderSliders() {
     const { values, labels } = this.state;
 
@@ -78,7 +133,7 @@ const App = class extends React.Component {
             type="range"
             min={-1}
             max={2}
-            step={0.1}
+            step={0.01}
             value={value}
             onChange={(e) => this.handleChange(index, e.target.value)}
           />
@@ -94,7 +149,7 @@ const App = class extends React.Component {
       <div className="Content">
         <div className="ImageWrapper">
           <ImageFilter
-            image={`https://source.unsplash.com/random/1200x800?time=${key}`}
+            image={`https://source.unsplash.com/random/1200x800`}
             key={key}
             // preserveAspectRatio='cover'
             // style={ { width: '100%', height: 300 } }
@@ -108,10 +163,45 @@ const App = class extends React.Component {
 
         <div>
           <h4>필터</h4>
+          <button className="btn btn-sm" onClick={this.init}>
+            초기화
+          </button>
           <button
             className="btn btn-sm"
             onClick={() =>
-              this.setState({ filter: "invert", applyFilter: true })
+              this.setState({
+                values: Scared,
+                filter: Scared,
+                applyFilter: true,
+                key: new Date().getTime(),
+              })
+            }
+          >
+            귀신이나올꺼같은 필터!!
+          </button>
+
+          <button
+            className="btn btn-sm"
+            onClick={() =>
+              this.setState({
+                values: nightfall,
+                filter: nightfall,
+                applyFilter: true,
+                key: new Date().getTime(),
+              })
+            }
+          >
+            해질녘...이랄까?
+          </button>
+
+          <button
+            className="btn btn-sm"
+            onClick={() =>
+              this.setState({
+                filter: "invert",
+                applyFilter: true,
+                key: new Date().getTime(),
+              })
             }
           >
             Invert
@@ -119,7 +209,11 @@ const App = class extends React.Component {
           <button
             className="btn btn-sm"
             onClick={() =>
-              this.setState({ filter: "grayscale", applyFilter: true })
+              this.setState({
+                filter: "grayscale",
+                applyFilter: true,
+                key: new Date().getTime(),
+              })
             }
           >
             Grayscale
@@ -127,7 +221,11 @@ const App = class extends React.Component {
           <button
             className="btn btn-sm"
             onClick={() =>
-              this.setState({ filter: "sepia", applyFilter: true })
+              this.setState({
+                filter: "sepia",
+                applyFilter: true,
+                key: new Date().getTime(),
+              })
             }
           >
             Sepia
@@ -140,6 +238,7 @@ const App = class extends React.Component {
                 filter: "duotone",
                 colorOne: [250, 50, 50],
                 colorTwo: [20, 20, 100],
+                key: new Date().getTime(),
               })
             }
           >
@@ -153,6 +252,7 @@ const App = class extends React.Component {
                 filter: "duotone",
                 colorOne: [50, 250, 50],
                 colorTwo: [250, 20, 220],
+                key: new Date().getTime(),
               })
             }
           >
@@ -166,6 +266,7 @@ const App = class extends React.Component {
                 filter: "duotone",
                 colorOne: [40, 250, 250],
                 colorTwo: [250, 150, 30],
+                key: new Date().getTime(),
               })
             }
           >
@@ -178,6 +279,7 @@ const App = class extends React.Component {
                 filter: "duotone",
                 colorOne: [40, 70, 200],
                 colorTwo: [220, 30, 70],
+                key: new Date().getTime(),
               })
             }
           >
@@ -185,17 +287,15 @@ const App = class extends React.Component {
           </button>
         </div>
 
-        <h4>기능</h4>
-
-        <button className="btn btn-sm" onClick={this.handleToggleFilter}>
+        {/* <button className="btn btn-sm" onClick={this.handleToggleFilter}>
           Turn filter {applyFilter ? "off" : "on"}
-        </button>
-        <button
+        </button> */}
+        {/* <button
           className="btn btn-sm"
           onClick={() => this.setState({ key: new Date().getTime() })}
         >
           New image
-        </button>
+        </button> */}
 
         <h4>적용된 필터 값</h4>
         {typeof filter === "object" ? (
