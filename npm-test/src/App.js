@@ -90,6 +90,8 @@ const App = class extends React.Component {
     this.handleToggleFilter = this.handleToggleFilter.bind(this);
   }
 
+  
+
   handleChange(index, value) {
     const { values } = this.state;
 

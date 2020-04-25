@@ -19,6 +19,13 @@ class SampleProvider extends Component {
   // 나중에 변화를 일으키는 함수들을 전달해줄때, 함수 하나하나 일일히 전달하는 것이 아니라,
   // 객체 하나로 한꺼번에 전달하기 위함입니다.
   actions = {
+    setAll: (value, name, arrays) => {
+      this.setState({
+        value,
+        name,
+        arrays: 777777,
+      });
+    },
     setValue: (value) => {
       this.setState({ value });
     },

@@ -24,9 +24,10 @@ class Sends extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     // :: props로 받은 setValue 호출
-    this.props.setValue(this.state.value);
-    this.props.setName(this.state.name);
-    this.props.setArrays(this.state.arrays);
+    this.props.setAll(this.state.value, this.state.name, this.state.arrays);
+    //this.props.setValue(this.state.value);
+    //this.props.setName(this.state.name);
+    //this.props.setArrays(this.state.arrays);
   };
 
   render() {
@@ -64,6 +65,7 @@ const SendsContainer = () => (
         setValue={actions.setValue}
         setName={actions.setName}
         setArrays={actions.setArrays}
+        setAll={actions.setAll}
       />
     )}
   </SampleConsumer>
