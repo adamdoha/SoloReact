@@ -90,8 +90,6 @@ const App = class extends React.Component {
     this.handleToggleFilter = this.handleToggleFilter.bind(this);
   }
 
-  
-
   handleChange(index, value) {
     const { values } = this.state;
 
@@ -151,7 +149,7 @@ const App = class extends React.Component {
       <div className="Content">
         <div className="ImageWrapper">
           <ImageFilter
-            image={`https://source.unsplash.com/random/1200x800`}
+            image={`./pirim.JPG`}
             key={key}
             // preserveAspectRatio='cover'
             // style={ { width: '100%', height: 300 } }

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
 const WRAPPER_STYLE = {
   position: "relative",
 };
 
 const IMAGE_STYLE = {
-  display: "block",
+  display: "flex",
   visibility: "hidden",
   width: "100%",
+  height: "100%",
 };
 
 const SVG_STYLE = {
@@ -185,17 +185,13 @@ class ImageFilter extends Component {
     ]);
 
     return (
-      <div
-        {...otherProps}
-        className={`ImageFilter ${className}`}
-        style={{ ...WRAPPER_STYLE, ...style }}
-      >
+      <div>
         {renderImage && (
           <img
             alt=""
             aria-hidden={true}
             style={IMAGE_STYLE}
-            src={image}
+            src={`./pirim.JPG`}
             className="ImageFilter-image"
           />
         )}
@@ -206,7 +202,7 @@ class ImageFilter extends Component {
           <image
             filter={`url(#filter-image-${id})`}
             preserveAspectRatio={aspectRatio}
-            xlinkHref={image}
+            xlinkHref={`./pirim.JPG`}
             x="0"
             y="0"
             width="100%"
