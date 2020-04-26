@@ -147,18 +147,15 @@ const App = class extends React.Component {
 
     return (
       <div className="Content">
-        <div className="ImageWrapper">
-          <ImageFilter
-            image={`./pirim.JPG`}
-            key={key}
-            // preserveAspectRatio='cover'
-            // style={ { width: '100%', height: 300 } }
-            filter={applyFilter ? filter : NONE}
-            colorOne={colorOne}
-            colorTwo={colorTwo}
-            onChange={(m) => this.setState({ values: m })}
-          />
-        </div>
+        <ImageFilter
+          image={`./components/pirim.JPG`}
+          // image={`https://source.unsplash.com/random/1200x800`}
+          key={key}
+          filter={applyFilter ? filter : NONE}
+          colorOne={colorOne}
+          colorTwo={colorTwo}
+          onChange={(m) => this.setState({ values: m })}
+        />
         <div className="Controls">{this.renderSliders()}</div>
 
         <div>
