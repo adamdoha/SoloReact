@@ -1,29 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
-const WRAPPER_STYLE = {
-  position: "relative",
-};
-
-const IMAGE_STYLE = {
-  display: "block",
-  visibility: "hidden",
-  width: "100%",
-};
-
-const SVG_STYLE = {
-  display: "block",
-  height: "100%",
-  width: "100%",
-  overflow: "hidden",
-};
-
-const SVG_ABSOLUTE_STYLE = {
-  left: 0,
-  position: "absolute",
-  top: 0,
-};
-
 const NONE = [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0];
 
 const INVERT = [-1, 0, 0, 0, 1, 0, -1, 0, 0, 1, 0, 0, -1, 0, 1, 0, 0, 0, 1, 0];
@@ -53,18 +29,6 @@ const SEPIA = [
   0,
 ];
 
-function omit(object, keysToOmit) {
-  const result = {};
-
-  Object.keys(object).forEach((key) => {
-    if (keysToOmit.indexOf(key) === -1) {
-      result[key] = object[key];
-    }
-  });
-
-  return result;
-}
-
 const types = {
   DUOTONE: "duotone",
   INVERT: "invert",
@@ -84,7 +48,6 @@ class ImageFilter extends Component {
 
   componentDidUpdate(nextProps) {
     const { filter, colorOne, colorTwo } = this.props;
-
     if (
       filter !== nextProps.filter ||
       (nextProps.filter === "duotone" &&
@@ -146,60 +109,17 @@ class ImageFilter extends Component {
   }
 
   render() {
-    const {
-      image,
-      preserveAspectRatio,
-      className,
-      style,
-      svgStyle,
-      svgProps,
-    } = this.props;
+    const { image, preserveAspectRatio, svgProps } = this.props;
 
     const { id, filter } = this.state;
 
     const aspectRatio =
       preserveAspectRatio === "cover" ? "xMidYMid slice" : preserveAspectRatio;
-    const renderImage = preserveAspectRatio === "none";
-
-    const svgMergedStyle = renderImage
-      ? {
-          ...SVG_STYLE,
-          ...SVG_ABSOLUTE_STYLE,
-          ...svgStyle,
-        }
-      : {
-          ...SVG_STYLE,
-          ...svgStyle,
-        };
-
-    const otherProps = omit(this.props, [
-      "image",
-      "filter",
-      "preserveAspectRatio",
-      "className",
-      "style",
-      "svgStyle",
-      "svgProps",
-      "colorOne",
-      "colorTwo",
-    ]);
 
     return (
-      <div
-        {...otherProps}
-        className={`ImageFilter ${className}`}
-        style={{ ...WRAPPER_STYLE, ...style }}
-      >
-        {renderImage && (
-          <img
-            alt=""
-            aria-hidden={true}
-            style={IMAGE_STYLE}
-            src={image}
-            className="ImageFilter-image"
-          />
-        )}
-        <svg {...svgProps} className="ImageFilter-svg" style={svgMergedStyle}>
+      <div>
+        {/* {renderImage && <img alt="" aria-hidden={true} src={image} />} */}
+        <svg {...svgProps}>
           <filter id={`filter-image-${id}`} colorInterpolationFilters="sRGB">
             <feColorMatrix type="matrix" values={filter.join(" ")} />
           </filter>
@@ -207,12 +127,17 @@ class ImageFilter extends Component {
           <image
             filter={`url(#filter-image-${id})`}
             preserveAspectRatio={aspectRatio}
+<<<<<<< HEAD
             //src={image}
              xlinkHref={image}
             x="0"
             y="0"
             width="100%"
+=======
+            xlinkHref={image}
+>>>>>>> b419e8d956704aad0fc892852957f2792c537f6a
             height="100%"
+            width="100%"
           />
         </svg>
       </div>

@@ -23,7 +23,7 @@ class SampleProvider extends Component {
       this.setState({
         value,
         name,
-        arrays: 777777,
+        arrays,
       });
     },
     setValue: (value) => {

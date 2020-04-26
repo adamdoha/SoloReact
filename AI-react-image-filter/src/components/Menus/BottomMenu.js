@@ -37,7 +37,7 @@ class BottomMenu extends Component {
               <label>조정</label>
             </StButtonCont>
 
-            <StButtonCont id="object" mode={store.curMode} onClick={store.changeMode}>
+            <StButtonCont id="segment" mode={store.curMode} onClick={store.changeMode}>
               <NaturePeople/>
               <label>객체찾기</label>
             </StButtonCont>
@@ -64,7 +64,7 @@ const StBottomMenuCont = styled.div`
   display: flex;
   overflow: scroll;
   justify-content: flex-start;
-  background: linear-gradient(to top, #ccffff 0%, #ffffff 100%);
+  background: linear-gradient(to top left, #66ffff 0%, #ff99cc 100%);
   box-sizing: border-box;  
   border-radius: 8px 8px 0 0;
   width: 100%;
@@ -83,6 +83,7 @@ const StButtonCont = styled(IconButton)`
     align-items: center;
   }
   label{
+    font-family: 'Single Day', cursive;
     padding-top: 2px;
     font-size: 60%;
   }

@@ -147,6 +147,7 @@ const App = class extends React.Component {
 
     return (
       <div className="Content">
+<<<<<<< HEAD
         <div className="ImageWrapper">
           <ImageFilter
             image={'../cat.jpg'}
@@ -159,6 +160,17 @@ const App = class extends React.Component {
             onChange={(m) => this.setState({ values: m })}
           />
         </div>
+=======
+        <ImageFilter
+          image={`./components/pirim.JPG`}
+          // image={`https://source.unsplash.com/random/1200x800`}
+          key={key}
+          filter={applyFilter ? filter : NONE}
+          colorOne={colorOne}
+          colorTwo={colorTwo}
+          onChange={(m) => this.setState({ values: m })}
+        />
+>>>>>>> b419e8d956704aad0fc892852957f2792c537f6a
         <div className="Controls">{this.renderSliders()}</div>
 
         <div>
