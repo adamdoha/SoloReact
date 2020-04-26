@@ -48,7 +48,6 @@ class ImageFilter extends Component {
 
   componentDidUpdate(nextProps) {
     const { filter, colorOne, colorTwo } = this.props;
-
     if (
       filter !== nextProps.filter ||
       (nextProps.filter === "duotone" &&
