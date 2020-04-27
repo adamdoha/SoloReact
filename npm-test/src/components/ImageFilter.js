@@ -123,10 +123,19 @@ class ImageFilter extends Component {
           <filter id={`filter-image-${id}`} colorInterpolationFilters="sRGB">
             <feColorMatrix type="matrix" values={filter.join(" ")} />
           </filter>
+          <img src={image}/>
           <image
             filter={`url(#filter-image-${id})`}
             preserveAspectRatio={aspectRatio}
+<<<<<<< HEAD
+            //src={image}
+             xlinkHref={image}
+            x="0"
+            y="0"
+            width="100%"
+=======
             xlinkHref={image}
+>>>>>>> b419e8d956704aad0fc892852957f2792c537f6a
             height="100%"
             width="100%"
           />

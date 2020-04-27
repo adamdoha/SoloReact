@@ -1,6 +1,6 @@
-import React from "react";
-import "./index.scss";
-import ImageFilter from "./components/ImageFilter";
+import React from 'react';
+import './index.scss';
+import ImageFilter from './components/ImageFilter';
 
 const NONE = [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0];
 const nightfall = [
@@ -55,26 +55,26 @@ const App = class extends React.Component {
     const values = [...NONE];
 
     const labels = [
-      "Red to Red",
-      "Green to Red",
-      "Blue to Red",
-      "Alpha to Red",
-      "Add to Red",
-      "Red to Green",
-      "Green to Green",
-      "Blue to Green",
-      "Alpha to Green",
-      "Add to Green",
-      "Red to Blue",
-      "Green to Blue",
-      "Blue to Blue",
-      "Alpha to Blue",
-      "Add to Blue",
-      "Red to Alpha",
-      "Green to Alpha",
-      "Blue to Alpha",
-      "Alpha to Alpha",
-      "Add to Alpha",
+      'Red to Red',
+      'Green to Red',
+      'Blue to Red',
+      'Alpha to Red',
+      'Add to Red',
+      'Red to Green',
+      'Green to Green',
+      'Blue to Green',
+      'Alpha to Green',
+      'Add to Green',
+      'Red to Blue',
+      'Green to Blue',
+      'Blue to Blue',
+      'Alpha to Blue',
+      'Add to Blue',
+      'Red to Alpha',
+      'Green to Alpha',
+      'Blue to Alpha',
+      'Alpha to Alpha',
+      'Add to Alpha',
     ];
 
     this.state = {
@@ -147,6 +147,20 @@ const App = class extends React.Component {
 
     return (
       <div className="Content">
+<<<<<<< HEAD
+        <div className="ImageWrapper">
+          <ImageFilter
+            image={'../cat.jpg'}
+            key={key}
+            // preserveAspectRatio='cover'
+            // style={ { width: '100%', height: 300 } }
+            filter={applyFilter ? filter : NONE}
+            colorOne={colorOne}
+            colorTwo={colorTwo}
+            onChange={(m) => this.setState({ values: m })}
+          />
+        </div>
+=======
         <ImageFilter
           image={`./components/pirim.JPG`}
           // image={`https://source.unsplash.com/random/1200x800`}
@@ -156,6 +170,7 @@ const App = class extends React.Component {
           colorTwo={colorTwo}
           onChange={(m) => this.setState({ values: m })}
         />
+>>>>>>> b419e8d956704aad0fc892852957f2792c537f6a
         <div className="Controls">{this.renderSliders()}</div>
 
         <div>
@@ -195,7 +210,7 @@ const App = class extends React.Component {
             className="btn btn-sm"
             onClick={() =>
               this.setState({
-                filter: "invert",
+                filter: 'invert',
                 applyFilter: true,
                 key: new Date().getTime(),
               })
@@ -207,7 +222,7 @@ const App = class extends React.Component {
             className="btn btn-sm"
             onClick={() =>
               this.setState({
-                filter: "grayscale",
+                filter: 'grayscale',
                 applyFilter: true,
                 key: new Date().getTime(),
               })
@@ -219,7 +234,7 @@ const App = class extends React.Component {
             className="btn btn-sm"
             onClick={() =>
               this.setState({
-                filter: "sepia",
+                filter: 'sepia',
                 applyFilter: true,
                 key: new Date().getTime(),
               })
@@ -232,7 +247,7 @@ const App = class extends React.Component {
             onClick={() =>
               this.setState({
                 applyFilter: true,
-                filter: "duotone",
+                filter: 'duotone',
                 colorOne: [250, 50, 50],
                 colorTwo: [20, 20, 100],
                 key: new Date().getTime(),
@@ -246,7 +261,7 @@ const App = class extends React.Component {
             onClick={() =>
               this.setState({
                 applyFilter: true,
-                filter: "duotone",
+                filter: 'duotone',
                 colorOne: [50, 250, 50],
                 colorTwo: [250, 20, 220],
                 key: new Date().getTime(),
@@ -260,7 +275,7 @@ const App = class extends React.Component {
             onClick={() =>
               this.setState({
                 applyFilter: true,
-                filter: "duotone",
+                filter: 'duotone',
                 colorOne: [40, 250, 250],
                 colorTwo: [250, 150, 30],
                 key: new Date().getTime(),
@@ -273,7 +288,7 @@ const App = class extends React.Component {
             className="btn btn-sm"
             onClick={() =>
               this.setState({
-                filter: "duotone",
+                filter: 'duotone',
                 colorOne: [40, 70, 200],
                 colorTwo: [220, 30, 70],
                 key: new Date().getTime(),
@@ -295,19 +310,19 @@ const App = class extends React.Component {
         </button> */}
 
         <h4>적용된 필터 값</h4>
-        {typeof filter === "object" ? (
+        {typeof filter === 'object' ? (
           <pre>
             필터 Weight = [<br />
-            {"  "}
+            {'  '}
             {values[0]}, {values[1]}, {values[2]}, {values[3]}, {values[4]},
             <br />
-            {"  "}
+            {'  '}
             {values[5]}, {values[6]}, {values[7]}, {values[8]}, {values[9]},
             <br />
-            {"  "}
+            {'  '}
             {values[10]}, {values[11]}, {values[12]}, {values[13]}, {values[14]}
             ,<br />
-            {"  "}
+            {'  '}
             {values[15]}, {values[16]}, {values[17]}, {values[18]}, {values[19]}
             ,<br />
             ];
@@ -316,7 +331,7 @@ const App = class extends React.Component {
           <pre>
             const filter = '{filter}';
             <br />
-            {filter === "duotone" && (
+            {filter === 'duotone' && (
               <span>
                 const colorOne = [{colorOne[0]}, {colorOne[1]}, {colorOne[2]}];
                 <br />

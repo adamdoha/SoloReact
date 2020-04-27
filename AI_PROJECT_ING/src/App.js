@@ -64,6 +64,7 @@ class App extends Component {
             this.setState(state, resolve);
         });
     }
+    ////////////////////////////////
 
     imgUpload = (e) => {
         e.preventDefault();
